@@ -1,15 +1,15 @@
 // create a class & constructor so that there exists orders and a inventory
 class InventoryAllocator {
-    constructor(orders, inventory) {
+    constructor(orders, inv) {
         this.orders = orders;
-        this.inventory = inventory;
+        this.inv = inv;
     }
     getOrders() {
         return this.orders;
     }
 
     getInventory() {
-        return this.inventory;
+        return this.inv;
     }
 
     ship() {
@@ -22,11 +22,16 @@ class InventoryAllocator {
             orderMap.set(key, value);
         }
 
+        let inventoryMap = new Map();
+        for (const [key, value] of Object.entries(this.inv)) {
+            inventoryMap.set(key, value);
+        }
+
 
         // receipt will output the name of the place we are getting the desired items from and the items quantity
         let receipt = [];
-
-        console.log(orderMap);
+        console.log(orderMap.keys);
+        console.log(inventoryMap);
     }
 
 
